@@ -1,5 +1,6 @@
 import {
   Button,
+  FlatList,
   Modal,
   Platform,
   StyleSheet,
@@ -13,7 +14,15 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../../config/colors";
 import defaultStyles from "../../config/style";
 import AppText from "../AppText";
-const AppPicker = ({ icon, placeholder, ...otherProps }) => {
+import PickerItem from "../PickerItem";
+const AppPicker = ({
+  icon,
+  items,
+  onSelectItem,
+  selectedItem,
+  placeholder,
+  ...otherProps
+}) => {
   const [modal, setModal] = useState(false);
   return (
     <>
@@ -28,7 +37,9 @@ const AppPicker = ({ icon, placeholder, ...otherProps }) => {
             />
           )}
 
-          <AppText style={styles.text}>{placeholder}</AppText>
+          <AppText style={styles.text}>
+            {selectedItem ? selectedItem.label : placeholder}
+          </AppText>
           <MaterialCommunityIcons
             name="chevron-down"
             size={20}
@@ -38,6 +49,21 @@ const AppPicker = ({ icon, placeholder, ...otherProps }) => {
       </TouchableWithoutFeedback>
       <Modal visible={modal} animationType="slide">
         <Button title="close" onPress={() => setModal(false)} />
+
+        <FlatList
+          data={items}
+          keyExtractor={(item) => item.value.toString()}
+          renderItem={({ item }) => (
+            <PickerItem
+              label={item.label}
+              onPress={() => {
+                setModal(false);
+                onSelectItem(item);
+             
+              }}
+            />
+          )}
+        />
       </Modal>
     </>
   );

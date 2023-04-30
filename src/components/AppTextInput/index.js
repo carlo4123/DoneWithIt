@@ -14,7 +14,10 @@ const AppTextInput = ({ icon, ...otherProps }) => {
           color={colors.medium}
         />
       )}
-      <TextInput style={defaultStyles.text} {...otherProps} />
+      <TextInput
+        style={defaultStyles.text}
+        {...otherProps}
+      />
     </View>
   );
 };
@@ -34,4 +37,5 @@ const styles = StyleSheet.create({
     marginRight: 10,
     alignSelf: "center",
   },
+ 
 });

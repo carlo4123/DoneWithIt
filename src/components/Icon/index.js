@@ -11,6 +11,7 @@ const Icon = ({
     <View
       style={{
         width: size,
+        
         height: size,
         borderRadius: size / 2,
         backgroundColor,
@@ -21,7 +22,7 @@ const Icon = ({
       <MaterialCommunityIcons name={name} color={iconColor} size={size * 0.5} />
     </View>
   );
-};
+}; 
 
 export default Icon;
 

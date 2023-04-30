@@ -34,7 +34,7 @@ const ListingScreen = () => {
           />
         )}
       />
-    </Screen>
+    </Screen> 
   );
 };
 
