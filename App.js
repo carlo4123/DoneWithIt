@@ -6,16 +6,12 @@ import {
   TextInput,
   View,
 } from "react-native";
-
-import Screen from "./src/components/screen";
-import AppTextInput from "./src/components/AppTextInput";
-import { useState } from "react";
-import SwitchComponents from "./src/sample/SwitchComponents";
-import AppPicker from "./src/components/AppPicker";
-import LoginScreen from "./src/screens/LoginScreen";
+import MessagesScreen from "./src/screens/MessagesScreen";
+import { ListItem } from "./src/components/lists";
+import ListingEditScreen from "./src/screens/ListingEditScreen";
 
 export default function App() {
-  return <LoginScreen />;
+  return <ListingEditScreen></ListingEditScreen>;
 }
 
 const styles = StyleSheet.create({

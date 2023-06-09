@@ -8,10 +8,13 @@ import {
   View,
 } from "react-native";
 import React, { useState } from "react";
-import ListItem from "../../components/ListItem";
+import {
+  ListItem,
+  ListItemSeperator,
+  ListItemDeleteAction,
+} from "../../components/lists";
 import Screen from "../../components/screen";
-import ListItemSeperator from "../../components/listItemSeperator";
-import ListItemDeleteAction from "../../components/listItemDeleteAction";
+
 import {
   GestureHandlerRootView,
   Swipeable,
@@ -19,14 +22,14 @@ import {
 const initialMessage = [
   {
     id: 1,
-    title: "T1",
-    description: "D1",
+    title: "Mosh Hamedami",
+    description: "Hey! is this item available?",
     image: require("../../Assets/mosh.jpg"),
   },
   {
     id: 2,
-    title: "T2",
-    description: "D2",
+    title: "Mosh Hamedami",
+    description: "Hey! is this item available? ",
     image: require("../../Assets/mosh.jpg"),
   },
 ];
